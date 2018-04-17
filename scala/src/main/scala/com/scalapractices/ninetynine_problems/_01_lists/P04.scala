@@ -7,10 +7,22 @@ import scala.annotation.tailrec
   */
 object P04 {
 
-  def length[T](list: List[T]): Int = ???
+  def length[T](list: List[T]): Int = list.size
 
-  def length1[T](list: List[T]): Int = ???
+  def length1[T](list: List[T]): Int = list.map(_ => 1).sum
 
-  def lengthRecursive[T](list: List[T]): Int = ???
+  def lengthRecursive[T](list: List[T]): Int = list match {
+    case Nil => 0
+    case x :: xs => 1 + lengthRecursive(xs)
+  }
+
+  def lengthRecursive2[T](list: List[T]): Int = {
+    @tailrec
+    def rec(list: List[T], length: Int): Int = list match {
+      case x :: xs => rec(xs, length + 1)
+      case Nil => length
+    }
+    rec(list, 0)
+  }
 
 }
