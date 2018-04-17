@@ -7,8 +7,17 @@ import scala.annotation.tailrec
   */
 object P05 {
 
-  def reverse[T](list: List[T]): List[T] = ???
+  def reverse[T](list: List[T]): List[T] = list.reverse
 
-  def reverseRecursive[T](list: List[T]): List[T] = ???
+  def reverse2[T](list: List[T]): List[T] = list.foldLeft(List[T]())((x,y) => y :: x)
+
+  def reverseRecursive[T](list: List[T]): List[T] = {
+    @tailrec
+    def go(list: List[T], acc: List[T]): List[T] = list match {
+      case Nil => acc
+      case x :: xs => go(xs, x :: acc)
+    }
+    go(list, List())
+  }
 
 }
