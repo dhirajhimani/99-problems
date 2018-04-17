@@ -7,11 +7,27 @@ package com.scalapractices.ninetynine_problems._01_lists
   */
 object P03 {
 
-  def kth[T](list: List[T], k: Int): T = ???
+  def kth[T](list: List[T], k: Int): T = list(k)
 
-  def kth1[T](list: List[T], k: Int): T = ???
+  def kth1[T](list: List[T], k: Int): T = list.take(k + 1).last
 
-  def kthRecursive[T](list: List[T], k: Int): T = ???
+  def kth2[T](list: List[T], k: Int): T = {
+    def go(list: List[T], k: Int): T = {
+      if (k == 0) {
+        list.head
+      } else {
+        go(list.tail, k-1)
+      }
+    }
+    go(list, k)
+  }
+
+  def kthRecursive[T](list: List[T], k: Int): T = list match {
+    case x :: xs  if (k == 0) => x
+    case x :: xs => kthRecursive(xs, k-1)
+    case _ => throw new NoSuchElementException
+  }
+
 
 
 }
