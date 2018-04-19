@@ -19,6 +19,36 @@ class P08Test extends FunSpec with Matchers {
     }
   }
 
+  describe("compress list spec(Buffer)") {
+
+    it("should remove consecutive duplicates in a list") {
+      val compressedList: List[String] = P08.compress_Buffer(List("a", "a", "a", "a", "b", "c", "c", "d", "e", "e", "e", "e"))
+      compressedList should have size 5
+      compressedList should be(List("a", "b", "c", "d", "e"))
+    }
+
+    it("should not remove non consecutive duplicates in a list") {
+      val compressedList: List[String] = P08.compress_Buffer(List("a", "a", "a", "a", "b", "c", "c", "a", "a", "d", "e", "e", "e", "e"))
+      compressedList should have size 6
+      compressedList should be(List("a", "b", "c", "a", "d", "e"))
+    }
+  }
+
+  describe("compress list spec(Fold Right)") {
+
+    it("should remove consecutive duplicates in a list") {
+      val compressedList: List[String] = P08.compress_foldRight(List("a", "a", "a", "a", "b", "c", "c", "d", "e", "e", "e", "e"))
+      compressedList should have size 5
+      compressedList should be(List("a", "b", "c", "d", "e"))
+    }
+
+    it("should not remove non consecutive duplicates in a list") {
+      val compressedList: List[String] = P08.compress_foldRight(List("a", "a", "a", "a", "b", "c", "c", "a", "a", "d", "e", "e", "e", "e"))
+      compressedList should have size 6
+      compressedList should be(List("a", "b", "c", "a", "d", "e"))
+    }
+  }
+
   describe("compress list spec (dropWhile)") {
 
     it("should remove consecutive duplicates in a list") {
