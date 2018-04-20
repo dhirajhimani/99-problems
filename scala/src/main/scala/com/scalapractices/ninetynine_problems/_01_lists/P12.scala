@@ -10,6 +10,12 @@ import scala.annotation.tailrec
   */
 object P12 {
 
-  def decode[T](encoded: List[Any]): List[T] = ???
+  def decode[T](encoded: List[Any]): List[T] = {
+    encoded match {
+      case (i:Int ,ch:T):: xs => List.fill(i)(ch) ++ decode(xs)
+      case (ch:T) :: xs => ch :: decode(xs)
+      case Nil => Nil
+    }
+  }
 
 }

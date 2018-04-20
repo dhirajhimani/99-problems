@@ -13,6 +13,8 @@ package com.scalapractices.ninetynine_problems._01_lists
   */
 object P11 {
 
-  def encode_modified[T](list: List[T]): List[Any] = ???
+  def encode_modified[T](list: List[T]): List[Any] = {
+    P09.pack(list).map(ls => if (ls.size > 1) (ls.size, ls.head) else ls.head)
+  }
 
 }
