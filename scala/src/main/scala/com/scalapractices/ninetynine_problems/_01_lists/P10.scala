@@ -8,5 +8,8 @@ package com.scalapractices.ninetynine_problems._01_lists
   */
 object P10 {
 
-  def encode[T](list: List[T]): List[(Int, T)] = ???
+  def encode[T](list: List[T]): List[(Int, T)] = {
+    val lls :List[List[T]] = P09.pack(list)
+    lls.map(ls => (ls.size, ls.head))
+  }
 }
