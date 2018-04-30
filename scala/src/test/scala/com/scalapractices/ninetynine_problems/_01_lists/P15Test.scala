@@ -18,6 +18,11 @@ class P15Test extends FunSpec with Matchers {
       duplicates should have length 9
       duplicates should equal(List("a", "a", "a", "b", "b", "b", "c", "c", "c"))
     }
+    it("should duplicate N times elements of a list without List.fill") {
+      val duplicates: List[String] = P15.duplicateTimes_recursion2(List("a", "b", "c"), 3)
+      duplicates should have length 9
+      duplicates should equal(List("a", "a", "a", "b", "b", "b", "c", "c", "c"))
+    }
   }
 
 }
