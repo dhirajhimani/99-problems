@@ -12,11 +12,16 @@ object P14 {
   /**
     * Using flatMap
     */
-  def duplicate[T](list: List[T]): List[T] = ???
+  def duplicate[T](list: List[T]): List[T] = {
+    list.flatMap(x => List(x,x))
+  }
 
 
   /**
     * Using recursion
     */
-  def duplicate_recursion[T](list: List[T]): List[T] = ???
+  def duplicate_recursion[T](list: List[T]): List[T] = list match {
+    case x :: xs => x +: x +: duplicate_recursion(xs)
+    case Nil => Nil
+  }
 }
