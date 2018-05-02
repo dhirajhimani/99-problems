@@ -11,7 +11,7 @@ object P17 {
   def split[T](list: List[T], n: Int): (List[T], List[T]) = {
     def go(list: List[T], count: Int, result: List[T]): (List[T], List[T]) = list match {
       case x :: xs if (count > 0)=>  go(xs, count - 1, x :: result)
-      case x :: xs => (result.reverse, list)
+      case _ :: _ => (result.reverse, list)
     }
 
     if (n ==0) (Nil, list) else go(list, n, Nil)
