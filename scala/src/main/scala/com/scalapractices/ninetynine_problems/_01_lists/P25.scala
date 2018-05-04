@@ -5,5 +5,7 @@ package com.scalapractices.ninetynine_problems._01_lists
   */
 object P25 {
 
-  def randomPermutation[T](list: List[T]): List[T] = ???
+  def randomPermutation[T](list: List[T]): List[T] = {
+    P23.randomSelectR(list, list.size)
+  }
 }

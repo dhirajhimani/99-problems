@@ -16,7 +16,16 @@ object P23 {
     ls.map(list(_))
   }
 
-  def randomSelectR[T](list: List[T], n: Int): List[T] = n match {
+  def randomSelectR[T](list: List[T], n: Int): List[T] = {
+    if (n == 0) {
+      Nil
+    } else {
+      val (l, el) = P20.removeAt0(list, Random.nextInt(list.size))
+      el :: randomSelectR(l, n - 1)
+    }
+  }
+
+  def randomSelectR2[T](list: List[T], n: Int): List[T] = n match {
     case 0 => Nil
     case _ => list(Random.nextInt(list.size)) :: randomSelect(list, n-1)
   }
