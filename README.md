@@ -16,4 +16,4 @@ From the original source:
 * [Scala](./scala)
 * [Haskell](./haskell)
 
-***I have created Forked this repo and concentrated on the Scala part, also have created branch solutions to the problem defined in master.***
+***I have Forked this repo and concentrated on the Scala part and also have created branch solutions to the problem defined in master.***
