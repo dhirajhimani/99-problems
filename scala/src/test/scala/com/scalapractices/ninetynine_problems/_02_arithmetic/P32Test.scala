@@ -26,4 +26,11 @@ class P32Test extends FunSpec with Matchers {
       fs should be(List(3, 11))
     }
   }
+  describe("Problem 32_1 Spec") {
+    it("12 is gcd of 60 & 36") {
+      val fs = P32.gcd(60, 36)
+      fs should be(12)
+    }
+  }
+
 }

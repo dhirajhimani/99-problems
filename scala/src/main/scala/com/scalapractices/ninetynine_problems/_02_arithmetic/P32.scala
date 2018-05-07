@@ -8,4 +8,9 @@ import scala.collection.mutable
 object P32 {
 
   def primeFactors(number: Int): List[Int] = ???
+
+  def gcd(a: Int, b: Int):Int = {
+    if(a == 0) b
+    else gcd(b % a, a)
+  }
 }
