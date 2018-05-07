@@ -12,7 +12,11 @@ object P27 {
     * Write a predicate that generates all the possibilities via backtracking.
     *
     */
-  def group3[T](list: List[T]): List[(List[T], List[T], List[T])] = ???
+  def group3[T](list: List[T]): List[(List[T], List[T], List[T])] =  for {
+    groupWith2Elements <- P26.combinations(list, 2)
+    groupWith3Elements <- P26.combinations(list diff groupWith2Elements, 3)
+  }
+    yield (groupWith2Elements, groupWith3Elements, list diff groupWith2Elements diff groupWith3Elements)
 
   def group3_1[T](list: List[T]): List[(List[T], List[T], List[T])] = ???
 

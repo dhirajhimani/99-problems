@@ -10,13 +10,17 @@ object P28 {
   The objective is to sort the elements of InList according to their length.
   E.g. short lists first, longer lists later, or vice versa
    */
-  def lsort[T](list: List[List[T]]): List[List[T]] = ???
+  def lsort[T](list: List[List[T]]): List[List[T]] = list.sortBy(_.length)
 
   /*
   Again, we suppose that a list (InList) contains elements that are lists themselves.
   But this time the objective is to sort the elements of InList according to their length frequency;
   i.e. in the default, where sorting is done ascending order, lists with rare lengths are placed first, others with a more frequent length come later.
    */
-  def lfsort[T](list: List[List[T]]): List[List[T]] = ???
+  def lfsort[T](list: List[List[T]]): List[List[T]] =
+    lsort(list)
+      .groupBy(_.length).values.toList
+      .sortBy(_.length)
+      .flatten
 
 }
