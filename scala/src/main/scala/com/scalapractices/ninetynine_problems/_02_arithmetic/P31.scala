@@ -6,7 +6,11 @@ package com.scalapractices.ninetynine_problems._02_arithmetic
   */
 object P31 {
 
-  def isPrime(number: Int): Boolean = ???
+  def isPrime(number: Int): Boolean =
+    if (number < 2)
+      false
+    else
+      !((2 to Math.sqrt(number).toInt) exists (number % _ == 0))
 
 
   /**
@@ -15,6 +19,13 @@ object P31 {
     *
     * Complexity of this algorithm is O(√n)
     */
-  def isPrime_trialDivision(number: Int): Boolean =  ???
+  def isPrime_trialDivision(number: Int): Boolean = {
+    if (number < 2) {
+      throw new IllegalArgumentException("Prime numbers can only be greater than equal to 2")
+    } else {
+      val factors = for (f <- 2 to Math.sqrt(number).toInt if number % f == 0) yield f
+      if (factors.nonEmpty) false else true
+    }
+  }
 
 }
