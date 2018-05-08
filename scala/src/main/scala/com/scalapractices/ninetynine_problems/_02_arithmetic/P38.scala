@@ -5,5 +5,5 @@ package com.scalapractices.ninetynine_problems._02_arithmetic
   */
 object P38 {
 
-  def coprime(first: Int, second: Int): Boolean = ???
+  def coprime(first: Int, second: Int): Boolean = P37.gcd(first, second) == 1
 }

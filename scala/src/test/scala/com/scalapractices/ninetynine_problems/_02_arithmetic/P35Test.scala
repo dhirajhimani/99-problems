@@ -11,6 +11,12 @@ class P35Test extends FunSpec with Matchers {
       numbers should be(List(3, 5))
     }
 
+    it("992 is the sum of 5 and 3 prime numbers") {
+      val numbers = P35.goldbach(992)
+      numbers should have length 2
+      numbers should be(List(73, 919))
+    }
+
     it("4 is the sum of 2 and 2 prime numbers") {
       val numbers = P35.goldbach(4)
       numbers should have length 2

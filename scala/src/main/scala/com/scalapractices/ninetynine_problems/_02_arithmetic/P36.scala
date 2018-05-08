@@ -5,9 +5,16 @@ package com.scalapractices.ninetynine_problems._02_arithmetic
   */
 object P36 {
 
-  def goldbach_list(range: Range): List[(Int, (Int, Int))] = ???
+  def goldbach_list(range: Range): List[(Int, (Int, Int))] = {
+    range.filter(_ % 2 == 0).filter(_ > 2).map(even => {
+      val g = P35.goldbach(even)
+      (even, (g.head, g.last))
+    }).toList
+  }
 
-  def goldbach_list1(range: Range, gt: Int): List[(Int, (Int, Int))] = ???
+  def goldbach_list1(range: Range, gt: Int): List[(Int, (Int, Int))] = {
+    goldbach_list(range).filter(tp => tp._2._1 > gt && tp._2._2 > gt)
+  }
 
 
 }

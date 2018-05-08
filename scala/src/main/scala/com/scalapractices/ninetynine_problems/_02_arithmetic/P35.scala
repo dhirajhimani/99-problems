@@ -10,7 +10,11 @@ package com.scalapractices.ninetynine_problems._02_arithmetic
   */
 object P35 {
 
-  def goldbach(number: Int): List[Int] = ???
+  def goldbach(number: Int): List[Int] = {
+    val pms = P34.primeNumbers(2 to number)
+    val i: Int = pms.filter(x => {pms contains (number - x)}).head
+    List(i, number - i)
+  }
 
   private def numbers(number: Int, primeNumbers: List[Int]): List[Int] = ???
 

@@ -8,12 +8,12 @@ class P33Test extends FunSpec with Matchers {
 
     it("[[3,2],[5,1],[7,1]] is prime factors multiples of 315") {
       val fs = P33.primeFactorsMult(315)
-      fs should be(List((3, 2), (5, 1), (7, 1)))
+      fs should contain theSameElementsAs(List((3, 2), (5, 1), (7, 1)))
     }
 
     it("[[3,1],[11,1]] is prime factors multiples of 33") {
       val fs = P33.primeFactorsMult(33)
-      fs should be(List((3, 1), (11, 1)))
+      fs should contain theSameElementsAs(List((3, 1), (11, 1)))
     }
 
   }

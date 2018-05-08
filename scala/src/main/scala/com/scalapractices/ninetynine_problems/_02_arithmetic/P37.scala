@@ -5,5 +5,8 @@ package com.scalapractices.ninetynine_problems._02_arithmetic
   */
 object P37 {
 
-  def gcd(first: Int, second: Int): Int = ???
+  def gcd(first: Int, second: Int): Int = {
+    if (first == 0) second
+    else gcd(second % first, first)
+  }
 }

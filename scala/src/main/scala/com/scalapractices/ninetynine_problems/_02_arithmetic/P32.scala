@@ -7,7 +7,18 @@ import scala.collection.mutable
   */
 object P32 {
 
-  def primeFactors(number: Int): List[Int] = ???
+  def primeFactors(number: Int): List[Int] = {
+
+    val factors = mutable.ListBuffer[Int]()
+    for (f <- 2 to number / 2 if P31.isPrime(f)) {
+      var n = number
+      while (n % f == 0) {
+        n = n / f
+        factors.append(f)
+      }
+    }
+    factors.toList
+  }
 
   def gcd(a: Int, b: Int):Int = {
     if(a == 0) b

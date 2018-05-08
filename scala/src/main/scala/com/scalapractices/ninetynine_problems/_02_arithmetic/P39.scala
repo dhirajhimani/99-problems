@@ -5,7 +5,11 @@ package com.scalapractices.ninetynine_problems._02_arithmetic
   */
 object P39 {
 
-  def totient_phi(m: Int): Int = ???
+  def totient_phi(m: Int): Int = {
+    (for (
+      i <- 1 to m if P38.coprime(i, m)
+    ) yield i ).size
+  }
 
   /**
     * The cototient of n is defined as n – φ(n), i.e. the number of positive integers less than or equal to n that are divisible by at least one prime that also divides n.
@@ -13,5 +17,5 @@ object P39 {
     * @param m number
     * @return cototient
     */
-  def cototient(m: Int): Int = ???
+  def cototient(m: Int): Int = m - totient_phi(m)
 }

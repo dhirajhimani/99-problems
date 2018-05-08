@@ -25,6 +25,11 @@ class P39Test extends FunSpec with Matchers {
       c should be(4)
     }
 
+    it("phi of 10090 is 4032") {
+      val p = P39.totient_phi(10090)
+      p should be(4032)
+    }
+
   }
 
 }

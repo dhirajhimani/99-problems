@@ -19,6 +19,11 @@ class P40Test extends FunSpec with Matchers {
       val p = P40.phi(99)
       p should be(60)
     }
+
+    it("phi of 10090 is 4032") {
+      val p = P40.phi(10090)
+      p should be(4032)
+    }
   }
 
 }
