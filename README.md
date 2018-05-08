@@ -15,3 +15,5 @@ From the original source:
 * [Java 8](./java8)
 * [Scala](./scala)
 * [Haskell](./haskell)
+
+***I have Forked this repo and concentrated on the Scala part and also have created branch solutions to the problem defined in master.***
