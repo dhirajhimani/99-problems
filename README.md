@@ -11,7 +11,7 @@ How to help yourself:-
 
 # Ninety-Nine Problems in Java 8, Scala, and Haskell
 
-This is an adaptation of the [Ninety-Nine Prolog Problems](https://sites.google.com/site/prologsite/prolog-problems) written by Werner Hett at the Berne University of Applied Sciences in Berne, Switzerland.
+This is an adaptation of the [Ninety-Nine Prolog Problems](http://aperiodic.net/phil/scala/s-99/) written by Werner Hett at the Berne University of Applied Sciences in Berne, Switzerland.
 
 From the original source:
 
