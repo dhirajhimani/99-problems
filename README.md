@@ -1,6 +1,17 @@
+
+I have Forked this repo and concentrated on the Scala part and also have created branch solutions to the problem defined in master.
+How to help yourself:-
+
+1. Fork the repo
+2. Switch to `Solutions` branch
+3. Read the problem solve it, use TDD
+4. Compare the solution with already solved solution in the repo.
+5. You are ready to learn Scala in better way
+
+
 # Ninety-Nine Problems in Java 8, Scala, and Haskell
 
-This is an adaptation of the [Ninety-Nine Prolog Problems](https://sites.google.com/site/prologsite/prolog-problems) written by Werner Hett at the Berne University of Applied Sciences in Berne, Switzerland.
+This is an adaptation of the [Ninety-Nine Prolog Problems](http://aperiodic.net/phil/scala/s-99/) written by Werner Hett at the Berne University of Applied Sciences in Berne, Switzerland.
 
 From the original source:
 
@@ -16,4 +27,3 @@ From the original source:
 * [Scala](./scala)
 * [Haskell](./haskell)
 
-***I have Forked this repo and concentrated on the Scala part and also have created branch solutions to the problem defined in master.***
