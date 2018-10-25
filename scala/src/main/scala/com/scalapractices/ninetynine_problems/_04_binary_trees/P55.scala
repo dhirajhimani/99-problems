@@ -1,3 +1,7 @@
 package com.scalapractices.ninetynine_problems._04_binary_trees
 
-class P55 {}
+object P55 {
+
+  def cBalanced(nodes: Int, value: String): Tree[String] = Tree(value, End, End)
+
+}
